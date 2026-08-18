@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Be In It — T-Time Media</title>
+<meta name="description" content="Share your story with T-Time Media. We're looking for trans men and transmasculine people to be featured in portraits, interviews, and written stories.">
+
+<meta property="og:title" content="Be In It — T-Time Media">
+<meta property="og:description" content="Share your story with T-Time Media.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ttimemedia.org/be-in-it">
+<meta property="og:image" content="https://ttimemedia.org/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+
+<style>
+  :root{
+    --ink:#141210;
+    --ink-2:#2a2622;
+    --paper:#fbfaf7;
+    --paper-2:#f3f1ea;
+    --line:#e5e1d8;
+    --muted:#5f5854;
+    --accent:#c0392b;
+    --accent-soft:#fceded;
+    --max:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  section{padding:88px 0;border-bottom:1px solid var(--line);}
+  h1,h2,h3,.ui{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;}
+  h2{
+    font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);margin:0 0 32px;
+  }
+  a{color:var(--accent);}
+
+  /* ---------- MASTHEAD ---------- */
+  header{background:var(--ink);color:var(--paper);padding:0;border:0;}
+  .masthead{padding:76px 0 84px;}
+  .wordmark{
+    font-family:"Archivo Black","Helvetica Neue",Arial,sans-serif;
+    font-weight:400;letter-spacing:-.01em;
+    font-size:clamp(64px,13vw,148px);
+    line-height:.86;margin:0;
+    color:#ffffff;
+  }
+  .wordmark span{color:var(--accent);}
+  .standfirst{
+    font-size:clamp(21px,2.6vw,29px);
+    line-height:1.4;max-width:23ch;margin:34px 0 0;
+    color:#fbfaf7;
+  }
+  .kicker{
+    font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);margin:0 0 22px;
+  }
+  .header-nav{
+    border-top:1px solid #34302b;padding:20px 0;
+    display:flex;gap:28px;flex-wrap:wrap;
+    font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+    font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .header-nav a{color:#c9bcae;text-decoration:none;}
+  .header-nav a:hover{color:#fff;}
+
+  /* ---------- PAGE CONTENT ---------- */
+  .lede{font-size:clamp(22px,2.4vw,27px);line-height:1.5;margin:0 0 28px;max-width:30ch;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .two-col p{margin:0 0 20px;}
+  .two-col p:last-child{margin-bottom:0;}
+
+  .terms{
+    list-style:none;padding:0;margin:0;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px;
+  }
+  .terms li{
+    padding-left:26px;position:relative;font-size:16px;line-height:1.55;
+  }
+  .terms li::before{
+    content:"";position:absolute;left:0;top:9px;
+    width:11px;height:11px;border:2px solid var(--accent);border-radius:50%;
+  }
+  .terms b{font-weight:600;}
+
+  /* ---------- FORMS ---------- */
+  input[type=email],input[type=text]{
+    flex:1 1 260px;padding:15px 16px;font-size:16px;
+    border:1px solid var(--line);background:#fff;color:var(--ink);
+    border-radius:2px;font-family:inherit;
+  }
+  input:focus{outline:2px solid var(--accent);outline-offset:-1px;}
+  select{
+    padding:12px 14px;font-size:16px;
+    border:1px solid var(--line);background:#fff;color:var(--ink);
+    border-radius:2px;font-family:inherit;cursor:pointer;
+  }
+  select:focus{outline:2px solid var(--accent);outline-offset:-1px;}
+  textarea{
+    padding:12px 14px;font-size:16px;
+    border:1px solid var(--line);background:#fff;color:var(--ink);
+    border-radius:2px;font-family:inherit;resize:vertical;
+  }
+  textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
+  .btn{
+    display:inline-block;border:0;cursor:pointer;
+    background:var(--ink);color:var(--paper);
+    padding:15px 30px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;
+    font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-weight:600;
+    border-radius:2px;text-decoration:none;transition:background .15s;
+  }
+  .btn:hover{background:var(--accent);}
+  .btn-accent{background:var(--accent);}
+  .btn-accent:hover{background:var(--ink);}
+  .fineprint{font-size:14px;color:var(--muted);margin:0;max-width:52ch;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:52px 0 64px;font-size:14.5px;color:var(--muted);}
+  .foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:baseline;}
+  .social{display:flex;gap:22px;flex-wrap:wrap;}
+  .social a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);}
+  .social a:hover{border-color:var(--accent);color:var(--accent);}
+
+  /* ---------- RESPONSIVE ---------- */
+  html{-webkit-text-size-adjust:100%;}
+  body{overflow-x:hidden;}
+  img{max-width:100%;height:auto;}
+  @media(max-width:900px){
+    .two-col{grid-template-columns:1fr;gap:34px;}
+    .terms{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 28px;}
+    .masthead{padding:48px 0 44px;}
+    body{font-size:16px;}
+    section{padding:52px 0;}
+    h2{margin-bottom:24px;}
+    .header-nav{gap:16px 22px;font-size:12px;padding:16px 0;}
+    .lede{max-width:none;}
+    .btn{width:100%;box-sizing:border-box;text-align:center;}
+    .terms{gap:14px 20px;}
+    input[type=email],input[type=text],select,textarea{width:100%;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= MASTHEAD ================= -->
+<header>
+  <div class="wrap masthead">
+    <p class="kicker">A media series</p>
+    <h1 class="wordmark">T<span>-</span>TIME</h1>
+    <p class="standfirst">Trans men and transmasculine people, on the record.</p>
+  </div>
+  <div class="wrap">
+    <nav class="header-nav">
+      <a href="/">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#creator">Meet the Creator</a>
+      <a href="/be-in-it">Be In It</a>
+      <a href="/#newsletter">Newsletter</a>
+      <a href="/#press">Press</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= BE IN IT ================= -->
+<section>
+  <div class="wrap">
+    <h2>Be in it</h2>
+    <div class="two-col" style="margin-bottom:44px;">
+      <div>
+        <p class="lede">T-Time runs on other people's stories, not just mine — and that only works if the range is real.</p>
+        <p>I'm looking for trans men and transmasculine people across race, age, body type, class, sexuality, and background, whether or not you've medically transitioned, whether or not you "pass." If you want to be featured — a portrait, an interview, a story in your own words — start here. Before anything is published, here is what you're agreeing to and what you keep.</p>
+      </div>
+      <div>
+        <ul class="terms">
+          <li><b>Written permission first.</b> Nothing runs without it.</li>
+          <li><b>You set the detail level.</b> Full name, first name, or none.</li>
+          <li><b>You can withdraw.</b> Before or after publication, no reason needed.</li>
+          <li><b>No location giveaways.</b> Backgrounds get checked before posting.</li>
+          <li><b>You see it first.</b> Nothing is published you haven't approved.</li>
+          <li><b>Adults only.</b> T-Time does not feature minors.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-fs-success style="display: none; padding: 12px 16px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 2px; color: #155724; margin-bottom: 16px; font-size: 15px;">
+      ✓ Thanks for getting in touch. I'll write back soon with next steps.
+    </div>
+    <div data-fs-error style="display: none; padding: 12px 16px; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 2px; color: #721c24; margin-bottom: 16px; font-size: 15px;"></div>
+
+    <form id="bein-form" data-fs-frm>
+      <div style="margin-bottom:20px;">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:16px;">
+          <input type="checkbox" name="age_confirmation" required data-fs-field style="width:18px;height:18px;">
+          I confirm I am 18 or older
+        </label>
+        <span data-fs-error="age_confirmation"></span>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label for="involvement" style="display:block;margin-bottom:8px;font-size:15px;font-weight:600;">How would you like to be involved?</label>
+        <select name="involvement_type" id="involvement" required data-fs-field style="width:100%;">
+          <option value="">Select one</option>
+          <option value="portrait">Portrait shoot</option>
+          <option value="interview">Interview</option>
+          <option value="written_story">Written story (in my own words)</option>
+          <option value="not_sure">Not sure yet</option>
+        </select>
+        <span data-fs-error="involvement_type"></span>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label for="name" style="display:block;margin-bottom:8px;font-size:15px;font-weight:600;">What should I call you?</label>
+        <input type="text" id="name" name="name" required data-fs-field style="width:100%;">
+        <span data-fs-error="name"></span>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label for="email" style="display:block;margin-bottom:8px;font-size:15px;font-weight:600;">Email</label>
+        <input type="email" id="email" name="email" required data-fs-field style="width:100%;">
+        <span data-fs-error="email"></span>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label for="city" style="display:block;margin-bottom:8px;font-size:15px;font-weight:600;">City or region <span style="color:#5f5854;">(optional)</span></label>
+        <input type="text" id="city" name="city" data-fs-field style="width:100%;">
+        <span data-fs-error="city"></span>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label for="message" style="display:block;margin-bottom:8px;font-size:15px;font-weight:600;">Anything else you want me to know? <span style="color:#5f5854;">(optional)</span></label>
+        <textarea id="message" name="message" data-fs-field style="width:100%;min-height:120px;"></textarea>
+        <span data-fs-error="message"></span>
+      </div>
+
+      <button class="btn btn-accent" type="submit" data-fs-submit-btn>Start the conversation</button>
+    </form>
+
+    <p class="fineprint">This is a first hello, not a commitment. I'll write back with questions before anything gets made.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="social">
+        <a href="https://www.instagram.com/ttimemedia/">Instagram · @ttimemedia</a>
+        <a href="https://www.instagram.com/lolhidominic/">Instagram · @lolhidominic</a>
+        <a href="https://www.facebook.com/dominicsview">Facebook · @dominicsview</a>
+      </div>
+      <div>© <span id="yr">2026</span> T-Time Media · Dominic Anthony Pérignon</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+
+<!-- Formspree AJAX Integration - Be In It Form -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#bein-form', formId: 'mwlewkov' });
+</script>
+
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>

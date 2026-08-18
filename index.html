@@ -135,21 +135,6 @@
     font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
   }
 
-  /* ---------- FEATURE / SUBMIT ---------- */
-  #featured{background:var(--paper-2);}
-  .terms{
-    list-style:none;padding:0;margin:0;
-    display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px;
-  }
-  .terms li{
-    padding-left:26px;position:relative;font-size:16px;line-height:1.55;
-  }
-  .terms li::before{
-    content:"";position:absolute;left:0;top:9px;
-    width:11px;height:11px;border:2px solid var(--accent);border-radius:50%;
-  }
-  .terms b{font-weight:600;}
-
   /* ---------- FORMS ---------- */
   .form-row{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 12px;}
   input[type=email],input[type=text]{
@@ -212,7 +197,7 @@
     .creator-photo{max-width:340px;margin:0 auto;}
   }
   @media(max-width:560px){
-    .wrap{padding:0 20px;}
+    .wrap{padding:0 28px;}
     .work{grid-template-columns:1fr;}
     .masthead{padding:48px 0 44px;}
     body{font-size:16px;}
@@ -249,7 +234,7 @@
     <nav class="header-nav">
       <a href="#about">About</a>
       <a href="#creator">Meet the Creator</a>
-      <a href="#featured">Be In It</a>
+      <a href="/be-in-it">Be In It</a>
       <a href="#newsletter">Newsletter</a>
       <a href="#press">Press</a>
     </nav>
@@ -302,42 +287,6 @@
   </div>
 </section>
 
-<!-- ================= BE IN IT ================= -->
-<section id="featured">
-  <div class="wrap">
-    <h2>Be in it</h2>
-    <div class="two-col" style="margin-bottom:44px;">
-      <div>
-        <p class="lede">T-Time runs on other people's stories, not just mine — and that only works if the range is real.</p>
-        <p>I'm looking for trans men and transmasculine people across race, age, body type, class, sexuality, and background, whether or not you've medically transitioned, whether or not you "pass." If you want to be featured — a portrait, an interview, a story in your own words — start here. Before anything is published, here is what you're agreeing to and what you keep.</p>
-      </div>
-      <div>
-        <ul class="terms">
-          <li><b>Written permission first.</b> Nothing runs without it.</li>
-          <li><b>You set the detail level.</b> Full name, first name, or none.</li>
-          <li><b>You can withdraw.</b> Before or after publication, no reason needed.</li>
-          <li><b>No location giveaways.</b> Backgrounds get checked before posting.</li>
-          <li><b>You see it first.</b> Nothing is published you haven't approved.</li>
-          <li><b>Adults only.</b> T-Time does not feature minors.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- ==========================================================
-         FORM ACTION: replace with your form endpoint.
-         Options: Tally, Formspree, Google Form, or your email tool.
-         ========================================================== -->
-    <form action="REPLACE-WITH-YOUR-FORM-ENDPOINT" method="POST">
-      <div class="form-row">
-        <input type="text" name="name" placeholder="What should I call you?" aria-label="Name" required>
-        <input type="email" name="email" placeholder="Email" aria-label="Email" required>
-        <button class="btn btn-accent" type="submit">Start the conversation</button>
-      </div>
-      <p class="fineprint">This is a first hello, not a commitment. I'll write back with questions before anything gets made.</p>
-    </form>
-  </div>
-</section>
-
 <!-- ================= NEWSLETTER ================= -->
 <section id="newsletter">
   <div class="wrap">
@@ -348,13 +297,18 @@
         <p class="fineprint">Stories, sourcing, and the parts that don't fit in a caption. Roughly monthly.</p>
       </div>
       <div>
-        <div class="form-row">
-          <input type="text" name="name" placeholder="What should I call you?" aria-label="Name">
-          <input type="email" name="email" placeholder="Email" aria-label="Email" required>
-          <button class="btn" type="submit">Subscribe</button>
+        <div data-fs-success style="display: none; padding: 12px 16px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 2px; color: #155724; margin-bottom: 16px; font-size: 15px;">
+          ✓ Thanks for subscribing! Check your email to confirm.
         </div>
-        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="a0261d37-a121-4a4c-a8cd-24a11eadb1aa"></script>
-        <noscript><a class="btn" href="https://ttimemedia.beehiiv.com/" target="_blank" rel="noopener">Subscribe on Beehiiv</a></noscript>
+        <div data-fs-error style="display: none; padding: 12px 16px; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 2px; color: #721c24; margin-bottom: 16px; font-size: 15px;"></div>
+        
+        <form id="newsletter-form" data-fs-frm>
+          <div class="form-row">
+            <input type="text" name="name" placeholder="What should I call you?" aria-label="Name" data-fs-field>
+            <input type="email" name="email" placeholder="Email" aria-label="Email" required data-fs-field>
+            <button class="btn" type="submit" data-fs-submit-btn>Subscribe</button>
+          </div>
+        </form>
         <p class="fineprint" style="margin-top:16px;">No spam. No list sharing, ever. Unsubscribe in one click.</p>
       </div>
     </div>
@@ -397,6 +351,16 @@
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+
+<!-- Formspree AJAX Integration - Newsletter Form -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#newsletter-form', formId: 'xljroega', successRedirect: 'https://www.ttimemedia.org/subscribed' });
+</script>
+
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
