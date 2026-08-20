@@ -1,0 +1,25 @@
+---
+interface Props {
+  home?: boolean;
+}
+const { home = false } = Astro.props;
+const p = home ? '#' : '/#';
+---
+
+<header>
+  <div class="wrap masthead">
+    <p class="kicker">A media series</p>
+    <h1 class="wordmark">T<span>-</span>TIME</h1>
+    <p class="standfirst">Trans men and transmasculine people, on the record.</p>
+  </div>
+  <div class="wrap">
+    <nav class="header-nav">
+      {!home && <a href="/">Home</a>}
+      <a href={`${p}about`}>About</a>
+      <a href={`${p}creator`}>Meet the Creator</a>
+      <a href="/be-in-it">Be In It</a>
+      <a href={`${p}newsletter`}>Newsletter</a>
+      <a href={`${p}press`}>Press</a>
+    </nav>
+  </div>
+</header>

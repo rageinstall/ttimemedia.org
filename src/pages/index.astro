@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="T-Time — A media series about trans men and transmasculine people"
+  description="T-Time is a media series about transgender men and transmasculine people. Stories, history, and reporting."
+  ogPath=""
+>
+  <Header home />
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="wrap">
+      <h2>What this is</h2>
+      <div class="two-col">
+        <div>
+          <p class="lede">T-Time is a media series about transgender men and transmasculine people — our lives, our history, and how we get covered.</p>
+          <p class="fineprint">Made by Dominic Anthony Pérignon. Published on Instagram and Facebook.</p>
+        </div>
+        <div>
+          <p>That includes men who've medically transitioned and men who haven't, men who "pass" and men who don't, binary and nonbinary transmasculine people alike — T-Time isn't defining who counts.</p>
+          <p>Some of it is history. Some of it is reporting on how newsrooms and studios handle us. A lot of it is just men — at work, at home, in the middle of an ordinary Tuesday.</p>
+          <p>Every claim here is sourced and dated. When historians disagree about the details, T-Time names the disagreement instead of quietly picking whichever version reads better.</p>
+
+          <!-- Verified figure. Re-check before launch; swap freely. -->
+          <div class="figure">
+            <span class="big">In the 2024–25 U.S. television season, 7 of 33 transgender characters were trans men. None were gay trans men.</span>
+            <cite>GLAAD, <em>Where We Are on TV</em>, 2024–25 season</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MEET THE CREATOR ================= -->
+  <section id="creator">
+    <div class="wrap">
+      <h2>Meet the creator</h2>
+      <div class="two-col">
+        <div>
+          <div class="creator-photo"><img src="/creator.jpg" alt="Dominic Anthony Pérignon, founder of T-Time Media"></div>
+        </div>
+        <div>
+          <p class="creator-name">Dominic Anthony Pérignon</p>
+          <p class="creator-role">Independent Journalist · Content Creator · Founder, T-Time Media</p>
+          <p>Dominic Anthony Pérignon is a journalist, content creator, and storyteller focused on LGBTQ+ communities, with a particular focus on the lived experiences of transgender men. Outside of T-Time Media, he creates educational and personal content, builds community, and uses his platform to make complex issues more visible and understandable. His work is rooted in the belief that trans people deserve to see themselves represented not just as subjects of debate, but as people with histories, experiences, voices, creativity, and stories worth documenting.</p>
+
+          <div class="figure">
+            <span class="big">"I started T-Time because I saw a gap in how transgender men were being represented, documented, and talked about. Too often, our stories are missing from mainstream LGBTQ+ conversations, media coverage, research, and even our own community spaces. I wanted to build something that puts trans men at the center — not just to talk about the challenges we face, but to document our history, amplify our voices, investigate the issues affecting our lives, and create a place where trans men can finally see themselves reflected."</span>
+            <cite>— Dominic, on why he started T-Time</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section id="newsletter">
+    <div class="wrap">
+      <h2>Newsletter</h2>
+      <div class="two-col">
+        <div>
+          <p class="lede">Social platforms can disappear. Email doesn't.</p>
+          <p class="fineprint">Stories, sourcing, and the parts that don't fit in a caption. Roughly monthly.</p>
+        </div>
+        <div>
+          <div data-fs-success style="display: none; padding: 12px 16px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 2px; color: #155724; margin-bottom: 16px; font-size: 15px;">
+            ✓ Thanks for subscribing! Check your email to confirm.
+          </div>
+          <div data-fs-error style="display: none; padding: 12px 16px; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 2px; color: #721c24; margin-bottom: 16px; font-size: 15px;"></div>
+
+          <form id="newsletter-form" data-fs-frm>
+            <div class="form-row">
+              <input type="text" name="name" placeholder="What should I call you?" aria-label="Name" data-fs-field>
+              <input type="email" name="email" placeholder="Email" aria-label="Email" required data-fs-field>
+              <button class="btn" type="submit" data-fs-submit-btn>Subscribe</button>
+            </div>
+          </form>
+          <p class="fineprint" style="margin-top:16px;">No spam. No list sharing, ever. Unsubscribe in one click.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRESS ================= -->
+  <section id="press">
+    <div class="wrap">
+      <h2>Press &amp; contact</h2>
+      <p class="press-email"><a href="mailto:hello@ttimemedia.org">hello@ttimemedia.org</a></p>
+      <div class="contact-grid">
+        <div>
+          <h3>Press &amp; interviews</h3>
+          <p>Available for comment on trans men's representation in media, and on coverage practices.</p>
+        </div>
+        <div>
+          <h3>Pitches &amp; collaboration</h3>
+          <p>Story tips, guest segments, and partnership inquiries.</p>
+        </div>
+        <div>
+          <h3>Corrections</h3>
+          <p>If something here is wrong, tell me and I'll fix it and say what changed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <!-- Formspree AJAX Integration - Newsletter Form -->
+  <script is:inline>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#newsletter-form', formId: 'xljroega', successRedirect: 'https://www.ttimemedia.org/subscribed' });
+  </script>
+  <script is:inline src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</Layout>

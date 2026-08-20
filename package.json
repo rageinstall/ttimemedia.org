@@ -2,11 +2,13 @@
   "name": "ttimemedia",
   "version": "1.0.0",
   "private": true,
-  "description": "T-Time Media site — static HTML, no build step.",
+  "description": "T-Time Media site — Astro static site.",
   "scripts": {
-    "dev": "serve -l 3000 ."
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "devDependencies": {
-    "serve": "^14.2.1"
+  "dependencies": {
+    "astro": "^4.16.0"
   }
 }
