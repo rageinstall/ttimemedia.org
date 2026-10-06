@@ -97,7 +97,7 @@ header{background:var(--ink);color:var(--paper);padding:0;border:0;}
 }
 
 /* ---------- WORK GRID ---------- */
-.work{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
 .card{
   background:var(--paper);padding:26px 22px 30px;
   display:flex;flex-direction:column;min-height:230px;
@@ -284,7 +284,7 @@ footer{padding:52px 0 64px;font-size:14.5px;color:var(--muted);}
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
-  .work{grid-template-columns:repeat(2,1fr);}
+  .work{grid-template-columns:1fr;}
   .two-col,.contact-grid{grid-template-columns:1fr;gap:34px;}
   .terms{grid-template-columns:1fr;}
   section{padding:64px 0;}
