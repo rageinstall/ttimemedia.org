@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verify a T-Time Media crew badge</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--ink:#0a0a0a;--paper:#fafaf8;--paper-2:#f0f0ec;--line:#deded8;--muted:#5a5a56;--accent:#c6f432;--accent-text:#4a6300;--teal:#2dd4bf;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter","Helvetica Neue",Arial,sans-serif;line-height:1.5}
+header{background:var(--ink);color:#fff;padding:28px 0}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+.brand{font-weight:800;letter-spacing:-.01em;font-size:26px}
+.brand span{color:var(--accent)}
+main{padding:40px 0 64px}
+h1{font-size:28px;line-height:1.15;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:24px}
+.status{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.ok{background:var(--accent);color:var(--ink)}
+.bad{background:#ffe3e3;color:#7a1212}
+dl{margin:18px 0 0;display:grid;grid-template-columns:140px 1fr;gap:10px 16px}
+dt{color:var(--muted);font-size:14px}
+dd{margin:0;font-weight:600}
+form{display:flex;gap:8px;margin-top:20px}
+input{flex:1;padding:12px 14px;border:1px solid var(--line);border-radius:4px;font-size:16px}
+button{background:var(--ink);color:#fff;border:0;border-radius:4px;padding:12px 18px;font-weight:600;font-size:15px;cursor:pointer}
+button:hover{background:var(--accent);color:var(--ink)}
+.fine{font-size:14px;color:var(--muted);margin-top:22px}
+a{color:var(--accent-text)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">T-TIME<span>-</span>MEDIA</div></div></header>
+<main><div class="wrap">
+<h1>Verify a crew badge</h1>
+<p class="sub">Scan the QR code on a T-Time Media badge, or type the ID printed on it.</p>
+<div class="card" id="result"></div>
+<form id="f"><input id="idin" placeholder="Crew ID, e.g. TTM-0001" autocomplete="off"><button>Check</button></form>
+<p class="fine">This page confirms that a person is part of the T-Time Media LLC crew. It is not an event credential. Each event decides its own access. Questions: <a href="mailto:press@ttimemedia.org">press@ttimemedia.org</a>.</p>
+</div></main>
+<script is:inline>
+// Add one entry per crew member, with their OK. Remove an entry the day they leave.
+var CREW = {
+  "TTM-0001": { name: "Dominic Anthony Pérignon", role: "Founder & Content Creator", valid: "2027-11-30", issued: "2026-11-03", active: true }
+};
+function show(id){
+  id = (id||"").trim().toUpperCase();
+  var box = document.getElementById("result"), c = CREW[id];
+  if(!id){ box.innerHTML = "<p style='margin:0'>Enter a crew ID to check it.</p>"; return; }
+  if(!c || !c.active || new Date(c.valid+"T23:59:59") < new Date()){
+    box.innerHTML = "<span class='status bad'>Not verified</span><p style='margin:14px 0 0'>No active T-Time Media crew badge matches <b></b>. Contact <a href='mailto:press@ttimemedia.org'>press@ttimemedia.org</a> to confirm.</p>";
+    box.querySelector("b").textContent = id; return;
+  }
+  box.innerHTML = "<span class='status ok'>Active crew member</span><dl><dt>Name</dt><dd></dd><dt>Role</dt><dd></dd><dt>Crew ID</dt><dd></dd><dt>Valid through</dt><dd></dd></dl>";
+  var dd = box.querySelectorAll("dd");
+  dd[0].textContent = c.name; dd[1].textContent = c.role; dd[2].textContent = id;
+  dd[3].textContent = new Date(c.valid+"T12:00:00").toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+}
+var m = location.pathname.match(/\/verify\/([^\/]+)\/?$/i);
+var start = m ? decodeURIComponent(m[1]) : (new URLSearchParams(location.search).get("id")||"");
+document.getElementById("idin").value = start; show(start);
+document.getElementById("f").addEventListener("submit", function(e){ e.preventDefault(); show(document.getElementById("idin").value); });
+</script>
+</body>
+</html>
