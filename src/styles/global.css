@@ -7,6 +7,7 @@
   --muted:#5a5a56;
   --accent:#c6f432;
   --accent-soft:#f1fbcf;
+  --accent-dark:#4d5a0a;
   --teal:#2dd4bf;
   --max:1080px;
 }
@@ -27,9 +28,9 @@ section{padding:88px 0;border-bottom:1px solid var(--line);}
 h1,h2,h3,.ui{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;}
 h2{
   font-size:13px;letter-spacing:.16em;text-transform:uppercase;
-  font-weight:700;color:var(--accent);margin:0 0 32px;
+  font-weight:700;color:var(--accent-dark);margin:0 0 32px;
 }
-a{color:var(--accent);}
+a{color:var(--accent-dark);}
 img{max-width:100%;height:auto;}
 
 /* ---------- MASTHEAD ---------- */
@@ -94,7 +95,7 @@ header{background:var(--ink);color:var(--paper);padding:0;border:0;}
 .creator-role{
   font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
   font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--accent);font-weight:700;margin:0 0 20px;
+  color:var(--accent-dark);font-weight:700;margin:0 0 20px;
 }
 
 /* ---------- WORK GRID ---------- */
@@ -108,14 +109,14 @@ header{background:var(--ink);color:var(--paper);padding:0;border:0;}
 .card .seg{
   font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
   font-size:10px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--accent);font-weight:700;margin-bottom:14px;
+  color:var(--accent-dark);font-weight:700;margin-bottom:14px;
 }
 .card .t{font-size:20px;line-height:1.28;margin:0 0 10px;font-weight:600;}
 .card .d{font-size:14.5px;color:var(--muted);line-height:1.5;margin:0;}
 .card .go{
   margin-top:auto;padding-top:18px;
   font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
-  font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+  font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);
 }
 
 /* ---------- FORMS ---------- */
@@ -166,6 +167,7 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
 
 /* ---------- NEWSLETTER ---------- */
 #newsletter{background:var(--ink);color:var(--paper);border:0;}
+#newsletter h2{color:var(--accent);}
 #newsletter .lede{color:#fbfaf7;}
 #newsletter .fineprint{color:#b3aca4;}
 #newsletter input{background:#221f1c;border-color:#3a3530;color:#fff;}
@@ -179,7 +181,7 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
   font-size:clamp(22px,2.6vw,30px);font-weight:700;text-decoration:none;
   color:var(--ink);border-bottom:2px solid var(--accent);
 }
-.press-email a:hover{color:var(--accent);}
+.press-email a:hover{color:var(--accent-dark);}
 .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
 .contact-grid h3{
   font-size:12px;letter-spacing:.14em;text-transform:uppercase;
@@ -253,7 +255,7 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
   color:#5f5854;
 }
 .footer-link a{
-  color:var(--accent);
+  color:var(--accent-dark);
 }
 
 /* ---------- FOOTER ---------- */
@@ -261,7 +263,7 @@ footer{padding:52px 0 64px;font-size:14.5px;color:var(--muted);}
 .foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:baseline;}
 .social{display:flex;gap:22px;flex-wrap:wrap;}
 .social a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);}
-.social a:hover{border-color:var(--accent);color:var(--accent);}
+.social a:hover{border-color:var(--accent-dark);color:var(--accent-dark);}
 
 /* ---------- LONG-FORM (Prism, policies) ---------- */
 .page-title{
