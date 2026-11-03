@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Verify a T-Time Media crew badge</title>
 <meta name="robots" content="noindex">
-<style>
+<style is:global>
 :root{--ink:#0a0a0a;--paper:#fafaf8;--paper-2:#f0f0ec;--line:#deded8;--muted:#5a5a56;--accent:#c6f432;--accent-text:#4a6300;--teal:#2dd4bf;}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter","Helvetica Neue",Arial,sans-serif;line-height:1.5}
@@ -43,7 +43,7 @@ a{color:var(--accent-text)}
 <script is:inline>
 // Add one entry per crew member, with their OK. Remove an entry the day they leave.
 var CREW = {
-  "TTM-0001": { name: "Dominic Anthony Pérignon", role: "Founder & Content Creator", valid: "2027-11-30", issued: "2026-11-03", active: true }
+  "TTM-0001": { name: "Dominic Anthony Pérignon", role: "Founder", valid: "2027-11-30", issued: "2026-11-03", active: true }
 };
 function show(id){
   id = (id||"").trim().toUpperCase();
