@@ -248,7 +248,7 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
   transition:background .15s;
   margin-top:12px;
 }
-.cta:hover{background:#fff;color:var(--ink);}
+.cta:hover{background:var(--ink);color:var(--paper);}
 .footer-link{
   margin-top:40px;
   font-size:14px;
