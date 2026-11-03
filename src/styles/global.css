@@ -172,7 +172,7 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
 #newsletter .fineprint{color:#b3aca4;}
 #newsletter input{background:#221f1c;border-color:#3a3530;color:#fff;}
 #newsletter .btn{background:var(--accent);color:var(--ink);}
-#newsletter .btn:hover{background:#fff;color:var(--ink);}
+#newsletter .btn:hover{background:var(--ink);color:var(--paper);border:1px solid var(--paper);}
 
 /* ---------- PRESS ---------- */
 .press-email{margin:0 0 40px;}
