@@ -146,9 +146,9 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
   font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-weight:600;
   border-radius:2px;text-decoration:none;transition:background .15s;
 }
-.btn:hover{background:var(--accent);}
-.btn-accent{background:var(--accent);}
-.btn-accent:hover{background:var(--ink);}
+.btn:hover{background:var(--accent);color:var(--ink);}
+.btn-accent{background:var(--accent);color:var(--ink);}
+.btn-accent:hover{background:var(--ink);color:var(--paper);}
 .fineprint{font-size:14px;color:var(--muted);margin:0;max-width:52ch;}
 
 /* ---------- TERMS ---------- */
@@ -171,7 +171,7 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
 #newsletter .lede{color:#fbfaf7;}
 #newsletter .fineprint{color:#b3aca4;}
 #newsletter input{background:#221f1c;border-color:#3a3530;color:#fff;}
-#newsletter .btn{background:var(--accent);color:#fff;}
+#newsletter .btn{background:var(--accent);color:var(--ink);}
 #newsletter .btn:hover{background:#fff;color:var(--ink);}
 
 /* ---------- PRESS ---------- */
@@ -234,7 +234,7 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
 .cta{
   display:inline-block;
   background:var(--accent);
-  color:#fff;
+  color:var(--ink);
   padding:15px 30px;
   font-size:14px;
   letter-spacing:.08em;
