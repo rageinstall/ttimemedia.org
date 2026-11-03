@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://ttimemedia.org',
+  site: 'https://www.ttimemedia.org',
   trailingSlash: 'never',
 });
