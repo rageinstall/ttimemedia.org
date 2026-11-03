@@ -5,10 +5,40 @@ interface Props {
   title: string;
   description: string;
   ogPath?: string;
+  noindex?: boolean;
 }
 
-const { title, description, ogPath = '' } = Astro.props;
-const canonical = `https://ttimemedia.org${ogPath}`;
+const { title, description, ogPath = '', noindex = false } = Astro.props;
+const siteUrl = 'https://www.ttimemedia.org';
+const canonical = `${siteUrl}${ogPath}`;
+const isHome = ogPath === '';
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'T-Time Media',
+  alternateName: 'T-Time',
+  url: siteUrl,
+  logo: `${siteUrl}/share.jpg`,
+  description: 'T-Time Media is an independent studio making original media and iOS apps across culture, identity, lifestyle, and community.',
+  founder: {
+    '@type': 'Person',
+    name: 'Dominic Anthony Pérignon',
+  },
+  sameAs: [
+    'https://www.instagram.com/ttimemedia/',
+    'https://www.instagram.com/lolhidominic/',
+    'https://www.facebook.com/lolhiidominic',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'T-Time Media',
+  url: siteUrl,
+  publisher: { '@type': 'Organization', name: 'T-Time Media' },
+};
 ---
 
 <!DOCTYPE html>
@@ -18,17 +48,25 @@ const canonical = `https://ttimemedia.org${ogPath}`;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+{noindex && <meta name="robots" content="noindex, follow">}
 
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="T-Time Media">
 <meta property="og:url" content={canonical}>
-<meta property="og:image" content="https://ttimemedia.org/share.jpg">
+<meta property="og:image" content={`${siteUrl}/share.jpg`}>
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={`${siteUrl}/share.jpg`}>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script is:inline defer src="/_vercel/insights/script.js"></script>
+{isHome && <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />}
+{isHome && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}
 </head>
 <body>
 <slot />
