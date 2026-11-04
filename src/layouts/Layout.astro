@@ -5,10 +5,11 @@ interface Props {
   title: string;
   description: string;
   ogPath?: string;
+  ogImage?: string;
   noindex?: boolean;
 }
 
-const { title, description, ogPath = '', noindex = false } = Astro.props;
+const { title, description, ogPath = '', ogImage = '/thumbs/home.png', noindex = false } = Astro.props;
 const siteUrl = 'https://www.ttimemedia.org';
 const canonical = `${siteUrl}${ogPath}`;
 const isHome = ogPath === '';
@@ -57,11 +58,11 @@ const websiteSchema = {
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T-Time Media">
 <meta property="og:url" content={canonical}>
-<meta property="og:image" content={`${siteUrl}/share.jpg`}>
+<meta property="og:image" content={`${siteUrl}${ogImage}`}>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
-<meta name="twitter:image" content={`${siteUrl}/share.jpg`}>
+<meta name="twitter:image" content={`${siteUrl}${ogImage}`}>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
