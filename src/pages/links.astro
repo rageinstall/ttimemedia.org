@@ -1,0 +1,141 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>lolhidominic Links</title>
+  <meta name="description" content="Trans man, creator and storyteller in Los Angeles. Chatting, IRL streams and games." />
+  <link rel="canonical" href="https://www.ttimemedia.org/links" />
+  <meta property="og:title" content="lolhidominic Links" />
+  <meta property="og:description" content="Trans man, creator and storyteller in Los Angeles. Chatting, IRL streams and games." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ttimemedia.org/links" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,500;0,600;1,800;1,900&display=swap" />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: #151515;
+      --panel-hover: #1e1e1e;
+      --line: #2a2a2a;
+      --fg: #f5f5f0;
+      --muted: #a2a39a;
+      --lime: #c6f432;
+      --ink: #0a0a0a;
+      --font: "Inter", "Segoe UI", system-ui, sans-serif;
+      --cut: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.5;
+      min-height: 100vh;
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+      padding-block: 0 48px;
+    }
+    .band {
+      height: 10px;
+      margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+      background: var(--lime);
+    }
+    main { max-width: 440px; margin: 0 auto; padding-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+    .logo {
+      width: 96px; height: 96px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--ink);
+      border: 4px solid var(--lime);
+      box-shadow: 0 0 0 6px var(--bg), 0 0 28px rgba(198, 244, 50, 0.25);
+      color: var(--lime);
+      font-weight: 900; font-style: italic; font-size: 30px; letter-spacing: 0.02em;
+    }
+    header { text-align: center; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+    h1 { margin: 0; font-weight: 900; font-style: italic; font-size: 36px; line-height: 1.1; letter-spacing: 0.01em; text-wrap: balance; }
+    header p { margin: 0; color: var(--muted); max-width: 34ch; text-wrap: balance; }
+    nav { width: 100%; display: flex; flex-direction: column; gap: 12px; }
+    .group { margin: 8px 0 0; font-size: 12px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lime); }
+    .link {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 16px 20px; background: var(--panel); color: var(--fg); text-decoration: none;
+      border: 1px solid var(--line); border-radius: 12px;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+    .link:hover { background: var(--panel-hover); border-color: var(--lime); transform: translateY(-1px); }
+    .link:focus-visible { outline: 3px solid var(--lime); outline-offset: 2px; }
+    .link.main {
+      background: var(--lime); color: var(--ink); border: 0; border-radius: 0; clip-path: var(--cut); padding: 20px 24px;
+    }
+    .link.main:hover { background: #d4ff4a; transform: translateY(-1px); }
+    .link.main .where { color: #2a3300; }
+    .link.main .arrow { color: var(--ink); }
+    .link.gift { border-color: #8a2cff; box-shadow: inset 0 0 0 1px rgba(79, 172, 254, 0.35); }
+    .link.gift:hover { border-color: #ffb400; }
+    .text { min-width: 0; display: flex; flex-direction: column; }
+    .name { font-weight: 800; font-style: italic; font-size: 18px; }
+    .where { color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+    .arrow { color: var(--muted); font-size: 20px; flex: none; }
+    footer { color: var(--muted); font-size: 14px; text-align: center; max-width: 38ch; text-wrap: balance; }
+    footer a { color: var(--lime); text-underline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { .link { transition: none; } .link:hover { transform: none; } }
+  </style>
+</head>
+<body>
+  <div class="band"></div>
+  <main>
+    <div class="logo" aria-hidden="true">LHD</div>
+    <header>
+      <h1>lolhidominic</h1>
+      <p>Trans man, creator and storyteller in Los Angeles. Chatting, IRL streams and games.</p>
+    </header>
+    <nav aria-label="Links">
+      <a class="link main" href="https://www.twitch.tv/lolhidominic" target="_blank" rel="noopener">
+        <span class="text"><span class="name">Watch on Twitch</span><span class="where">twitch.tv/lolhidominic</span></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="link gift" href="https://throne.com/lolhidominic" target="_blank" rel="noopener">
+        <span class="text"><span class="name">Send me a gift</span><span class="where">My Throne wishlist</span></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+
+      <p class="group">Socials</p>
+      <a class="link" href="https://www.instagram.com/lolhidominic" target="_blank" rel="noopener">
+        <span class="text"><span class="name">Instagram</span><span class="where">@lolhidominic</span></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="link" href="https://www.tiktok.com/@lolhidominic" target="_blank" rel="noopener">
+        <span class="text"><span class="name">TikTok</span><span class="where">@lolhidominic</span></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="link" href="https://www.youtube.com/@lolhidominic" target="_blank" rel="noopener">
+        <span class="text"><span class="name">YouTube</span><span class="where">@lolhidominic</span></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="link" href="https://www.facebook.com/lolhiidominic" target="_blank" rel="noopener">
+        <span class="text"><span class="name">Facebook</span><span class="where">@lolhiidominic</span></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+
+      <p class="group">More</p>
+      <a class="link" href="https://www.ttimemedia.org" target="_blank" rel="noopener">
+        <span class="text"><span class="name">T-Time Media</span><span class="where">ttimemedia.org</span></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="link" href="https://linkwithpride.com" target="_blank" rel="noopener">
+        <span class="text"><span class="name">Link With Pride</span><span class="where">Travel and safety guide for the LGBTQ+ community</span></span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </nav>
+    <footer>Brand and business inquiries: <a href="mailto:info@lolhidominic.com">info@lolhidominic.com</a></footer>
+  </main>
+</body>
+</html>
