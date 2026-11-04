@@ -9,7 +9,7 @@ interface Props {
   noindex?: boolean;
 }
 
-const { title, description, ogPath = '', ogImage = '/share.jpg', noindex = false } = Astro.props;
+const { title, description, ogPath = '', ogImage = '/thumbs/home.png', noindex = false } = Astro.props;
 const siteUrl = 'https://www.ttimemedia.org';
 const canonical = `${siteUrl}${ogPath}`;
 const isHome = ogPath === '';
