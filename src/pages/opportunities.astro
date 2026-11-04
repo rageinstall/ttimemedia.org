@@ -30,16 +30,46 @@ import Footer from '../components/Footer.astro';
   <section id="events">
     <div class="wrap">
       <h2>Where we've been</h2>
-      <div class="work">
-        <a class="card" href="/press/comic-con">
+      <a class="event-feature" href="/press/comic-con">
+        <span class="event-feature-text">
           <span class="seg">Press</span>
           <p class="t">Comic Con</p>
           <p class="d">T-Time Media's first event as press — 2026.</p>
           <span class="go">Read the recap →</span>
-        </a>
-      </div>
+        </span>
+        <span class="event-feature-photo">
+          <img src="/images/comic-con/entrance.png" alt="The 'Welcome to L.A. Comic Con' sign above the crowded convention center atrium" />
+        </span>
+      </a>
     </div>
   </section>
+
+  <style>
+    .event-feature {
+      display: grid;
+      grid-template-columns: minmax(260px, 1fr) 2fr;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      color: inherit;
+      transition: background .15s;
+    }
+    .event-feature:hover { background: var(--accent-soft); }
+    .event-feature-text {
+      padding: 26px 22px 30px;
+      display: flex;
+      flex-direction: column;
+      min-height: 230px;
+    }
+    .event-feature-photo {
+      overflow: hidden;
+      border-left: 1px solid var(--line);
+    }
+    .event-feature-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 640px) {
+      .event-feature { grid-template-columns: 1fr; }
+      .event-feature-photo { border-left: 0; border-top: 1px solid var(--line); aspect-ratio: 16/9; }
+    }
+  </style>
 
   <!-- ================= OPEN OPPORTUNITIES ================= -->
   <section id="open">
