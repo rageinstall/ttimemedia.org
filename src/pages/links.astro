@@ -29,6 +29,7 @@
       --ink: #0a0a0a;
       --font: "Inter", "Segoe UI", system-ui, sans-serif;
       --cut: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+      --teal: #2dd4bf;
       color-scheme: dark;
     }
     * { box-sizing: border-box; }
@@ -80,6 +81,10 @@
     .link.main .arrow { color: var(--ink); }
     .link.gift { border-color: #8a2cff; box-shadow: inset 0 0 0 1px rgba(79, 172, 254, 0.35); }
     .link.gift:hover { border-color: var(--lime); box-shadow: inset 0 0 0 1px rgba(198, 244, 50, 0.5), 0 0 18px rgba(198, 244, 50, 0.45); }
+    .link.app { border-color: var(--teal); box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.45), 0 0 20px rgba(45, 212, 191, 0.3); }
+    .link.app:hover { background: var(--panel-hover); border-color: var(--teal); box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.6), 0 0 28px rgba(45, 212, 191, 0.55); }
+    .link.app .name { color: var(--teal); }
+    .badge { display: inline-block; padding: 2px 8px; white-space: nowrap; background: var(--teal); color: var(--ink); font-size: 11px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 4px; }
     .text { min-width: 0; display: flex; flex-direction: column; }
     .name { font-weight: 800; font-style: italic; font-size: 18px; }
     .where { color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
@@ -121,6 +126,12 @@
         <span class="arrow" aria-hidden="true">&rarr;</span>
       </a>
 
+      <p class="group">My Apps</p>
+      <a class="link app" href="https://www.ttimemedia.org/prism" target="_blank" rel="noopener">
+        <span class="text"><span class="name">Prism</span><span class="where">Your journey. Your way. — an iOS app by T-Time Media</span></span>
+        <span class="side"><span class="badge">iOS App</span><span class="arrow" aria-hidden="true">&rarr;</span></span>
+      </a>
+
       <p class="group">Socials</p>
       <a class="link" href="https://www.instagram.com/lolhidominic" target="_blank" rel="noopener">
         <span class="text"><span class="name">Instagram</span><span class="where">@lolhidominic</span></span>
@@ -140,10 +151,6 @@
       </a>
 
       <p class="group">More</p>
-      <a class="link" href="https://www.ttimemedia.org/prism" target="_blank" rel="noopener">
-        <span class="text"><span class="name">Prism</span><span class="where">Your journey. Your way. — an iOS app by T-Time Media</span></span>
-        <span class="arrow" aria-hidden="true">&rarr;</span>
-      </a>
       <a class="link" href="https://www.ttimemedia.org" target="_blank" rel="noopener">
         <span class="text"><span class="name">T-Time Media</span><span class="where">ttimemedia.org</span></span>
         <span class="arrow" aria-hidden="true">&rarr;</span>
