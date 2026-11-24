@@ -3,7 +3,6 @@ interface Props {
   home?: boolean;
 }
 const { home = false } = Astro.props;
-const p = home ? '#' : '/#';
 ---
 
 <header>
@@ -15,11 +14,8 @@ const p = home ? '#' : '/#';
   <div class="wrap">
     <nav class="header-nav">
       {!home && <a href="/">Home</a>}
-      <a href={`${p}about`}>About</a>
       <a href="/be-in-it">Be In It</a>
       <a href="/opportunities">Opportunities</a>
-      <a href={`${p}newsletter`}>Newsletter</a>
-      <a href={`${p}press`}>Press</a>
     </nav>
   </div>
 </header>
