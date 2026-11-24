@@ -2,6 +2,32 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const reels = [
+  { title: 'Trans adult here (JK Rowling response)', date: 'Aug 24, 2026', url: 'https://www.instagram.com/lolhidominic/reel/DccFQO_yiFK/' },
+  { title: "Stories: who said I haven't had the surgery yet?", date: 'Aug 12, 2026', url: 'https://www.instagram.com/lolhidominic/reel/Db9Luaiydwl/' },
+  { title: "Support doesn't have to be perfect, it just has to be real", date: 'Aug 15, 2025', url: 'https://www.instagram.com/lolhidominic/reel/DNY8CndSxd8/' },
+  { title: "A week in West Virginia meeting Lola's family", date: 'Jun 16, 2025', url: 'https://www.instagram.com/lolhidominic/reel/DK-mtw7PvlO/' },
+  { title: 'Respecting a name change', date: 'May 14, 2025', url: 'https://www.instagram.com/lolhidominic/reel/DJphgfrTQMN/' },
+  { title: "I'd take this life over never being real with myself", date: 'May 1, 2025', url: 'https://www.instagram.com/lolhidominic/reel/DJIGMNnT6pv/' },
+  { title: 'The administration gutting LGBTQ+ health research', date: 'Mar 26, 2025', url: 'https://www.instagram.com/lolhidominic/reel/DHrNKuGTSZV/' },
+  { title: 'FTM dating tips', date: 'Mar 24, 2025', url: 'https://www.instagram.com/lolhidominic/reel/DHl9IbRRTWz/' },
+  { title: "Don't make assumptions", date: 'Jan 27, 2025', url: 'https://www.instagram.com/lolhidominic/reel/DFWVieOyUVv/' },
+  { title: 'Dating a trans man', date: 'Jan 24, 2025', url: 'https://www.instagram.com/lolhidominic/reel/DFOdQBcyavM/' },
+  { title: 'Names', date: 'Jan 6, 2025', url: 'https://www.instagram.com/lolhidominic/reel/DEf0mSTTgak/' },
+  { title: '"I wish I was a boy"', date: 'Jun 7, 2024', url: 'https://www.instagram.com/lolhidominic/reel/C779XfaocEk/' },
+  { title: 'Quick coffee stop with my best friend', date: 'May 22, 2024', url: 'https://www.instagram.com/lolhidominic/reel/C7Sm6GtP6Vp/' },
+  { title: 'Pansexuality', date: 'May 1, 2024', url: 'https://www.instagram.com/lolhidominic/reel/C6cNPydyJq8/' },
+  { title: 'Sneakers on Poizon', date: 'Mar 23, 2024', url: 'https://www.instagram.com/lolhidominic/reel/C43lNNfvc38/' },
+  { title: 'Repost: what you need to know', date: 'Jan 12, 2024', url: 'https://www.instagram.com/lolhidominic/reel/C2A1pNEvPcs/' },
+  { title: 'Living life a quarter mile at a time', date: 'Dec 27, 2023', url: 'https://www.instagram.com/lolhidominic/reel/C1XoPaNvtv6/' },
+  { title: 'Part 2: I used to be terrified of speaking my truth', date: 'Nov 21, 2023', url: 'https://www.instagram.com/lolhidominic/reel/Cz69cwWPnEL/' },
+  { title: 'Part 1: comfortability with speaking', date: 'Nov 20, 2023', url: 'https://www.instagram.com/lolhidominic/reel/Cz4HaAIORr8/' },
+  { title: 'Handling questions about my trans identity from strangers', date: 'Nov 6, 2023', url: 'https://www.instagram.com/lolhidominic/reel/CzUzCrXtsfz/' },
+  { title: 'What you need to know before you start', date: 'Sep 18, 2023', url: 'https://www.instagram.com/lolhidominic/reel/CxWKxI9PEaP/' },
+  { title: 'By no means am I perfect', date: 'Aug 21, 2023', url: 'https://www.instagram.com/lolhidominic/reel/CwOVfTtMTDP/' },
+  { title: 'T-Time, T-Time', date: 'Jul 31, 2023', url: 'https://www.instagram.com/lolhidominic/reel/CvXqOXHPxUo/' },
+];
 ---
 
 <Layout
@@ -30,6 +56,94 @@ import Footer from '../components/Footer.astro';
       <a class="btn btn-accent" style="margin-top:32px;display:inline-block;" href="/be-in-it">Be in it →</a>
     </div>
   </section>
+
+  <!-- ================= WATCH THE SERIES ================= -->
+  <section id="watch">
+    <div class="wrap">
+      <h2>Watch the series</h2>
+      <p class="lede">{reels.length} stories so far, and counting.</p>
+      <div class="reel-grid">
+        {reels.map((reel, i) => (
+          <a class="reel-card" href={reel.url} target="_blank" rel="noopener noreferrer">
+            <span class="reel-top">
+              <span class="reel-index">{String(i + 1).padStart(2, '0')}</span>
+              <span class="reel-play" aria-hidden="true">▶</span>
+            </span>
+            <span class="reel-title">{reel.title}</span>
+            <span class="reel-meta">
+              <span class="reel-date">{reel.date}</span>
+              <span class="reel-go">Watch ↗</span>
+            </span>
+          </a>
+        ))}
+      </div>
+      <p class="fineprint" style="margin-top:24px;">All reels are on Instagram, <a href="https://www.instagram.com/lolhidominic/" target="_blank" rel="noopener noreferrer">@lolhidominic</a>.</p>
+    </div>
+  </section>
+
+  <style>
+    .reel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .reel-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 20px;
+      border: 1px solid var(--muted);
+      text-decoration: none;
+      color: inherit;
+      background: var(--paper);
+      transition: background .15s, border-color .15s, transform .15s;
+    }
+    .reel-card:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+    .reel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .reel-index {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+    .reel-play {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--ink);
+      font-size: 11px;
+    }
+    .reel-title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.35;
+      flex: 1;
+    }
+    .reel-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .reel-go {
+      font-weight: 600;
+      color: var(--ink);
+    }
+  </style>
 
   <Footer />
 </Layout>
