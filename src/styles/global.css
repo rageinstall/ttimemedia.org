@@ -183,7 +183,7 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;}
   color:var(--ink);border-bottom:2px solid var(--accent);
 }
 .press-email a:hover{color:var(--accent-dark);}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;}
 .contact-grid h3{
   font-size:12px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);margin:0 0 10px;font-weight:700;
